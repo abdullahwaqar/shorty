@@ -1,0 +1,20 @@
+{
+  "name": "shorty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdullahwaqar/shorty.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdullahwaqar/shorty/issues"
+  },
+  "homepage": "https://github.com/abdullahwaqar/shorty#readme"
+}
