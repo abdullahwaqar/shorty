@@ -2,9 +2,13 @@
 
 main {
     width: 80%;
-    margin-top: 2em;
+    margin: 2em auto 0 auto;
 }
 
 .main-text-logo {
     font-family: 'Pacifico', cursive;
+}
+
+.shorty-btn {
+    text-align: center;
 }

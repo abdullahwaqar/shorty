@@ -9,7 +9,7 @@
     <title>Shorty - Shorteninig URLs the cool way!</title>
 </head>
 <body>
-    <section class="hero is-medium is-dark is-bold">
+    <section class="hero is-medium is-success is-bold">
         <div class="hero-body">
             <div class="container">
             <h1 class="title main-text-logo">Shorty.</h1>
@@ -17,20 +17,39 @@
             </div>
         </div>
     </section>
-    <main>
-        <div class="field is-horizontal">
-            <div class="field-label is-normal">
-                <label class="label">URL</label>
-            </div>
-            <div class="field-body">
-                <div class="field">
-                <p class="control">
-                    <input class="input is-large is-dark" type="text" placeholder="https://example.com/">
-                </p>
+    <main id="app">
+        <form>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">URL</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                    <p class="control">
+                        <input v-model="url" class="input is-large is-rounded is-success" type="text" placeholder="https://example.com/" required>
+                    </p>
+                    </div>
                 </div>
             </div>
-        </div>
+            <!-- Second input -->
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Name</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                    <p class="control">
+                        <input v-model="name" class="input is-large is-rounded is-success" type="text" placeholder="whatever-you-like" required>
+                    </p>
+                    </div>
+                </div>
+            </div>
+            <div class="shorty-btn">
+                <a class="button is-success is-large is-rounded is-bold main-text-logo">Shorty</a>
+            </div>
+        </form>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="./index.js"></script>
 </body>
 </html>
