@@ -18,7 +18,7 @@
         </div>
     </section>
     <main id="app">
-        <form>
+        <form @submit.prevent="createShorty()">
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
                     <label class="label">URL</label>
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="shorty-btn">
-                <a class="button is-success is-large is-rounded is-bold main-text-logo">Shorty</a>
+                <button type="submit" class="button is-success is-large is-rounded is-bold main-text-logo">Shorty</button>
             </div>
         </form>
     </main>
