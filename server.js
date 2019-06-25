@@ -12,13 +12,17 @@ app.use(morgan('tiny'));
 app.use(bodyParser.json());
 app.use(express.static('./public'));
 
+app.get('/:name', async (req, res) => {
+    const url = urls.find(req.params.name);
+});
+
 app.post('/api/shorty', async (req, res) => {
-    console.log(req.body);
     try {
         const url = await urls.create(req.body);
         res.json(url);
     } catch (error) {
-        res.json(error).status(500);
+        res.status(500);
+        res.json(error);
     }
 });
 

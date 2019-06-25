@@ -18,15 +18,18 @@
         </div>
     </section>
     <main id="app">
-        <form @submit.prevent="createShorty()">
+        <form v-if="!success" @submit.prevent="createShorty()">
+            <div v-if="error" class="notification is-danger">
+                {{ error }}
+            </div>
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    <label class="label">URL</label>
+                    <label class="label is-size-2">URL</label>
                 </div>
                 <div class="field-body">
                     <div class="field">
                     <p class="control">
-                        <input v-model="url" class="input is-large is-rounded is-success" type="text" placeholder="https://example.com/" required>
+                        <input v-model="url" class="input is-large is-rounded is-success" type="text" placeholder="https://www.example.com/" required>
                     </p>
                     </div>
                 </div>
@@ -34,21 +37,31 @@
             <!-- Second input -->
             <div class="field is-horizontal">
                 <div class="field-label is-normal">
-                    <label class="label">Name</label>
+                    <label class="label is-size-2">shorty.cool/</label>
                 </div>
                 <div class="field-body">
                     <div class="field">
                     <p class="control">
-                        <input v-model="name" class="input is-large is-rounded is-success" type="text" placeholder="whatever-you-like" required>
+                        <input v-model="name" class="input is-large is-rounded is-success" type="text" placeholder="whatever_you_like" required>
                     </p>
                     </div>
                 </div>
             </div>
             <div class="shorty-btn">
-                <button type="submit" class="button is-success is-large is-rounded is-bold main-text-logo">Shorty</button>
+                <button type="submit" class="button is-success is-large is-rounded is-bold main-text-logo" v-bind:class="{'is-loading': processing}">Shorty</button>
             </div>
         </form>
+        <div v-if="success" class="notification is-success is-round is-bold">
+            <h1 class="is-size-1" style="text-align: center"><a :href="'/' + name" target="_blank">https://shorty.cool/{{name}}</a></h1>
+        </div>
     </main>
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong class="main-text-logo">Shorty.</strong> Made with ❤ by <a href="https://github.com/abdullahwaqar">Abdullah Waqar</a>. The source code is licensed <a href="https://github.com/abdullahwaqar/shorty/blob/master/LICENSE">GNU General Public License v3.0</a>.
+          </p>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="./index.js"></script>
 </body>

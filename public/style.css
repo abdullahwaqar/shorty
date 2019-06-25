@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
 main {
-    width: 80%;
-    margin: 2em auto 0 auto;
+    width: 70%;
+    margin: 2em auto;
+}
+
+footer {
+    height: 100px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .main-text-logo {

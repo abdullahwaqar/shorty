@@ -1,27 +1,39 @@
 new Vue({
     el: '#app',
     data: {
+        error: '',
         name: '',
-        url: ''
+        url: '',
+        processing: false,
+        success: false
     },
     methods: {
         async createShorty() {
+            //* Toggle loading animation
+            this.processing = true;
             const API_URI = '/api/shorty';
             const body = {
                 name: this.name,
                 url: this.url
             };
 
-            const response = await fetch(API_URI, {
+            fetch(API_URI, {
                 method: 'POST',
                 body: JSON.stringify(body),
                 headers: {
                     'content-type': 'application/json'
                 }
+            }).then(response => {
+                return response.json();
+            }).then(result => {
+                if (result.isJoi) {
+                    //* Validation error
+                    this.error = result.details.map(detail => detail.message).join('. ');
+                } else {
+                    this.success = true;
+                }
             });
-            const result = await response;
-            console.log(result);
-            return response.json();
+            this.processing = false;
         }
     }
 });
