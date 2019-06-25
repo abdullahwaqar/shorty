@@ -13,7 +13,13 @@ app.use(bodyParser.json());
 app.use(express.static('./public'));
 
 app.get('/:name', async (req, res) => {
-    const url = urls.find(req.params.name);
+    const name = req.params.name;
+    const shorty = await urls.find(name);
+    if (shorty) {
+        res.redirect(shorty.url);
+    } else {
+        res.redirect(`/404.html?name=${name}`);
+    }
 });
 
 app.post('/api/shorty', async (req, res) => {

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://jenil.github.io/bulmaswatch/minty/bulmaswatch.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Shorty - 404 Not Found</title>
+</head>
+<body>
+    <section class="hero is-medium is-success is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <a href="/">
+                    <h1 class="title main-text-logo">Shorty.</h1>
+                </a>
+                <hr>
+                <h2 class="subtitle2 has-text-weight-light">Shorteninig URLs the cool way!</h2>
+            </div>
+        </div>
+    </section>
+    <main>
+        <div class="notification is-success is-round is-bold">
+            <h1 class="is-size-2" style="text-align: center"><span id="name"></span> was not found.</h1>
+        </div>
+        <a href="/">
+            <h1 class="is-size-2" style="text-align: center">Go Back! Make One.</h1>
+        </a>
+    </main>
+    <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            <strong class="main-text-logo"><a href="/">Shorty.</a></strong> Made with ❤ by <a href="https://github.com/abdullahwaqar">Abdullah Waqar</a>. The source code is licensed <a href="https://github.com/abdullahwaqar/shorty/blob/master/LICENSE">GNU General Public License v3.0</a>.
+          </p>
+        </div>
+    </footer>
+    <script>
+        const name = new URLSearchParams(window.location.search).get('name');
+        document.querySelector('#name').textContent = name;
+    </script>
+</body>
+</html>

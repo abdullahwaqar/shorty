@@ -13,6 +13,12 @@ const schema = Joi.object().keys({
     })
 }).with('name', 'url');
 
+function find(name) {
+    return urls.findOne({
+        name
+    });
+}
+
 async function create(shortyUrl) {
     const result = Joi.validate(shortyUrl, schema);
 
@@ -37,5 +43,6 @@ async function create(shortyUrl) {
 }
 
 module.exports = {
+    find,
     create
 };
