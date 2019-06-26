@@ -7,6 +7,16 @@ new Vue({
         processing: false,
         success: false
     },
+    watch: {
+        url: function() {
+            this.processing = false;
+            this.error = '';
+        },
+        name: function() {
+            this.processing = false;
+            this.error = '';
+        }
+    },
     methods: {
         async createShorty() {
             //* Toggle loading animation
@@ -33,7 +43,7 @@ new Vue({
                     this.success = true;
                 }
             });
-            this.processing = false;
+            // this.processing = false;
         }
     }
 });
