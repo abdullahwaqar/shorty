@@ -20,8 +20,8 @@
   "homepage": "https://github.com/abdullahwaqar/shorty#readme",
   "dependencies": {
     "@hapi/joi": "^15.1.0",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "monk": "^6.0.6",
     "morgan": "^1.9.1",
     "nconf": "^0.10.0"
